@@ -1,34 +1,35 @@
 {
-    "name": "ml-preprocess",
-    "version": "1.0.0",
-    "description": "preprocess functions to improve the representation and quality of data",
-    "main": "src/index.js",
-    "directories": {
-        "lib": "src"
-    },
-    "scripts": {
-        "test": "./node_modules/.bin/mocha --require should-approximately-deep --reporter mocha-better-spec-reporter --recursive"
-    },
-    "repository": "mljs/preprocess",
-    "keywords": [
-        "preprocess",
-        "metric",
-        "vector",
-        "data",
-        "mining",
-        "datamining",
-        "machine",
-        "learning"
-    ],
-    "author": "Miguel Asencio",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/mljs/preprocess/issues"
-    },
-    "homepage": "https://github.com/mljs/preprocess",
-    "devDependencies": {
-        "mocha-better-spec-reporter": "latest",
-        "mocha": "latest",
-        "should": "latest"
-    }
+	"name": "ml-preprocess",
+	"version": "1.0.0",
+	"description": "preprocess functions to improve the representation and quality of data",
+	"main": "src/index.js",
+	"directories": {
+		"lib": "src",
+		"test": "test"
+	},
+	"scripts": {
+		"test": "./node_modules/.bin/mocha --require should-approximately-deep --reporter mocha-better-spec-reporter --recursive"
+	},
+	"repository": "mljs/preprocess",
+	"keywords": [
+		"preprocess",
+		"metric",
+		"vector",
+		"data",
+		"mining",
+		"datamining",
+		"machine",
+		"learning"
+	],
+	"author": "Miguel Asencio",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mljs/preprocess/issues"
+	},
+	"homepage": "https://github.com/mljs/preprocess",
+	"devDependencies": {
+		"mocha-better-spec-reporter": "latest",
+		"mocha": "latest",
+		"should": "latest"
+	}
 }
