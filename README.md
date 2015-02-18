@@ -13,17 +13,14 @@ $ npm install ml-preprocess
 
 ## Methods
 
-### normal(X)
+### normal(X,m)
 
-Data normalization of x data.
+Data normalization of x data using the m method. 
 
-### select(X)
+#### normal methods
 
-Features selection
-
-### discret(X)
-
-Discretization of continuous features
+* *median*: Median Normalization
+* *pqn*: Probabilistic Quotient Normalization
 
 ## Contributing
 
