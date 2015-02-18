@@ -1,6 +1,8 @@
 'use strict';
-var array = require('./array');
-var matrix = require('./matrix');
+
+var stat = require('ml-stat');
+var array = stat.array;
+var matrix = stat.matrix;
 
 module.exports = function normal(x) {
 	var X = x.slice();
