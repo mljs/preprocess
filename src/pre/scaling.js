@@ -26,12 +26,6 @@ function vastScaling(dataSet, mean, std) {
     return result.divColumnVector(std);
 }
 
-function centering(dataSet, mean) {
-    var means = mean || Stat.matrix.mean(dataSet);
-    var std = std || Stat.matrix.standardDeviation(dataSet, means, true);
-    return Matrix.checkMatrix(dataSet).subRowVector(means);
-}
-
 function levelScaling(dataSet, mean) {
     var means = mean || Stat.matrix.mean(dataSet);
     var result = Matrix.checkMatrix(dataSet).subRowVector(means)
@@ -40,7 +34,6 @@ function levelScaling(dataSet, mean) {
 
 module.exports = {
     levelScaling: levelScaling,
-    centering: centering,
     vastScaling: vastScaling,
     autoScaling: autoScaling,
     pareto: pareto
