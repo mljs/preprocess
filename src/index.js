@@ -1,5 +1,3 @@
 'use strict';
 
-exports.normal = require('./pre/normal');
-exports.select = require('./pre/select');
-exports.discret = require('./pre/discret');
+exports.normal = require('./normal');
