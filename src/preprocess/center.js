@@ -1,6 +1,5 @@
-'use strict';
+import {ajustData} from './utils';
 
-const utils = require('./utils');
 /**
  * return the centered data
  * @param {Array<number>|Array<Array<number>>} dataSet
@@ -8,7 +7,7 @@ const utils = require('./utils');
  * @return {Matrix}
  * @link  https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-7-142
  */
-module.exports = function center(dataSet, means) {
-    [dataSet, means] = utils.ajustData(dataSet, means, 0);
+export function center(dataSet, means) {
+    [dataSet, means] = ajustData(dataSet, means, 0);
     return dataSet.subRowVector(means);
-};
+}

@@ -1,15 +1,11 @@
-'use strict';
-
-const stat = require('ml-stat');
-const array = stat.array;
-const matrix = stat.matrix;
+import {matrix, array} from 'ml-stat';
 
 /**
  *
  * @param {Array<number>|Array<Array<number>>} x
  * @return {*}
  */
-function normal(x) {
+export function normal(x) {
     let X = x.slice();
 
     if (!X.length) {
@@ -45,5 +41,3 @@ function normal(x) {
 
     return X;
 }
-
-module.exports = normal;

@@ -6,25 +6,26 @@
   [![David deps][david-image]][david-url]
   [![npm download][download-image]][download-url]
 
-preprocess functions to improve the representation and quality of data
+Preprocess functions to improve the representation and quality of data.
 
 ## Installation
+`$ npm install --save ml-preprocess`
 
-`$ npm install ml-preprocess`
+## Usage
+
+```js
+import library from 'ml-preprocess';
+
+const result = library(args);
+// result is ...
+```
+Or test it in [Runkit](https://runkit.com/npm/ml-preprocess)
 
 ## [API Documentation](https://mljs.github.io/preprocess/)
 
-## Example
-
-```js
-const preprocess = require('ml-preprocess');
-```
-
-Or test it in [Runkit](https://runkit.com/npm/ml-preprocess)
-
 ## License
 
-[MIT](./LICENSE)
+  [MIT](./LICENSE)
 
 [npm-image]: https://img.shields.io/npm/v/ml-preprocess.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/ml-preprocess
