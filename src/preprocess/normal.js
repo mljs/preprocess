@@ -1,43 +1,61 @@
 import {matrix, array} from 'ml-stat';
 
 /**
- *
- * @param {Array<number>|Array<Array<number>>} x
- * @return {*}
+ * Normalizes the data based in the mean and the standard deviation
+ * @param {Array<number>|Array<Array<number>>} x - Array or matrix to normalize
+ * @return {Array<number>|Array<Array<number>>}
  */
 export function normal(x) {
-    let X = x.slice();
+    if (!Array.isArray(x)) {
+        throw new Error('The input should be an array');
+    } else if (!Array.isArray(x[0])) {
+        return vectorNormalization(x);
+    } else {
+        return matrixNormalization(x);
+    }
+}
 
-    if (!X.length) {
-        // is not an array
-        return undefined;
-    } else if (X[0].length === undefined) {
-        // is a vector
-        let m = array.mean(X);
-        let s = array.standardDeviation(X, true);
-        if (s === 0) {
-            for (let i = 0; i < X.length; i++) {
-                X[i] = (X[i] - m);
-            }
-        } else {
-            for (let i = 0; i < X.length; i++) {
-                X[i] = (X[i] - m) / s;
-            }
+function vectorNormalization(data) {
+    let mean = array.mean(data);
+    let std = array.standardDeviation(data, true);
+
+    let ans = new Array(data.length);
+    if (std === 0) {
+        for (let i = 0; i < ans.length; i++) {
+            ans[i] = (data[i] - mean);
         }
-    } else if (X[0][0].length === undefined) {
-        // is a matrix
-        let m = matrix.mean(X, 0);
-        let s = matrix.standardDeviation(X, m, true);
-        for (let i = 0; i < X.length; i++) {
-            for (let j = 0; j < X[i].length; j++) {
-                if (s[i] === 0) {
-                    X[i][j] = (X[i][j] - m[i]);
-                } else {
-                    X[i][j] = (X[i][j] - m[i]) / s[i];
-                }
+    } else {
+        for (let i = 0; i < ans.length; i++) {
+            ans[i] = (data[i] - mean) / std;
+        }
+    }
+
+    return ans;
+}
+
+function matrixNormalization(data) {
+    let means = matrix.mean(data, 1);
+    let std = matrixStandardDeviation(data, means);
+
+    let ans = new Array(data.length);
+    for (let i = 0; i < data.length; i++) {
+        ans[i] = new Array(data[i].length);
+        for (let j = 0; j < data[i].length; j++) {
+            if (std[i] === 0) {
+                ans[i][j] = (data[i][j] - means[i]);
+            } else {
+                ans[i][j] = (data[i][j] - means[i]) / std[i];
             }
         }
     }
 
-    return X;
+    return ans;
+}
+
+function matrixStandardDeviation(data, means) {
+    return data.map(
+        (row, i) => Math.sqrt(row.reduce(
+            (acc, val) => acc + ((val - means[i]) * (val - means[i]))
+            , 0) / (row.length - 1))
+    );
 }
