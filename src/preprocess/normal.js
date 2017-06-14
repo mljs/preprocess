@@ -4,6 +4,7 @@ import {matrix, array} from 'ml-stat';
  * Normalizes the data based in the mean and the standard deviation
  * @param {Array<number>|Array<Array<number>>} x - Array or matrix to normalize
  * @return {Array<number>|Array<Array<number>>}
+ * @link https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-7-142
  */
 export function normal(x) {
     if (!Array.isArray(x)) {
