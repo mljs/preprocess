@@ -14,10 +14,23 @@ Preprocess functions to improve the representation and quality of data.
 ## Usage
 
 ```js
-import library from 'ml-preprocess';
+import {normal} from 'ml-preprocess';
 
-const result = library(args);
-// result is ...
+// vectors
+let vector = [1000, 2000, 3000];
+normal(vector) == [-1, 0, 1];
+
+// matrices
+let matrix = [
+    [2000, 1000, 3000],
+    [3000, 2000, 1000],
+    [1000, 1000, 1000]
+];
+normal(matrix) == [
+    [0, -1, 1],
+    [1, 0, -1],
+    [0, 0, 0]
+];
 ```
 Or test it in [Runkit](https://runkit.com/npm/ml-preprocess)
 
