@@ -49,6 +49,7 @@
     "rollup": "^0.43.0"
   },
   "dependencies": {
+    "ml-array-mean": "^1.0.1",
     "ml-matrix": "^2.3.0",
     "ml-stat": "^1.3.3"
   }

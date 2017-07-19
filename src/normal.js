@@ -1,4 +1,5 @@
 import {matrix, array} from 'ml-stat';
+import arrayMean from 'ml-array-mean';
 
 /**
  * Normalizes the data based in the mean and the standard deviation
@@ -17,7 +18,7 @@ export function normal(x) {
 }
 
 function vectorNormalization(data) {
-    let mean = array.mean(data);
+    let mean = arrayMean(data);
     let std = array.standardDeviation(data, true);
 
     let ans = new Array(data.length);

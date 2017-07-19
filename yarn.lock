@@ -1820,6 +1820,10 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
+ml-array-mean@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/ml-array-mean/-/ml-array-mean-1.0.1.tgz#f78c0f83840069b489b42393e9ce3985b0e8a5ec"
+
 ml-array-utils@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/ml-array-utils/-/ml-array-utils-0.3.0.tgz#c0cc5afdc1cb051f5a83b1ce71641c243672f649"
