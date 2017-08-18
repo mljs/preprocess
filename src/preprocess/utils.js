@@ -10,11 +10,7 @@ import Matrix from 'ml-matrix';
  * @param {Array<number>} [options.std]
  * @return {[Matrix,Array<number>,Array<number>]}
  */
-export function adjustData(dataSet, options = {}) {
-    const {
-        means = matrix.mean(dataSet),
-        std = matrix.standardDeviation(dataSet, means, true)
-    } = options;
+export function adjustData(dataSet, options) {
     if (Array.isArray(dataSet[0])) {
         dataSet = Matrix.checkMatrix(dataSet);
     } else if (Array.isArray(dataSet)) {
@@ -24,5 +20,11 @@ export function adjustData(dataSet, options = {}) {
     } else {
         throw new Error('Invalid data type for dataSet');
     }
+
+    const {
+        means = matrix.mean(dataSet),
+        std = matrix.standardDeviation(dataSet, means, true)
+    } = options;
+
     return [dataSet, means, std];
 }
