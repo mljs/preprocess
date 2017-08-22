@@ -1,3 +1,3 @@
-export {normal} from './preprocess/normal';
-export * from './preprocess/scale';
-export {center} from './preprocess/center';
+export {normal} from './normal';
+export * from './scale';
+export {center} from './center';

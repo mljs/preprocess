@@ -11,9 +11,7 @@ import {adjustData} from './utils';
  */
 export function pareto(dataSet, options = {}) {
     var [output, means, std] = adjustData(dataSet, options);
-    return output.subRowVector(means).divRowVector(std.map(a => {
-        return Math.sqrt(a);
-    }));
+    return output.subRowVector(means).divRowVector(std.map(Math.sqrt));
 }
 
 /**
