@@ -1,6 +1,6 @@
 {
   "name": "ml-preprocess",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Preprocess functions to improve the representation and quality of data",
   "main": "lib/index.js",
   "module": "src/index.js",
